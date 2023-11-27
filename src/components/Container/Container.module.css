@@ -1,0 +1,17 @@
+.container {
+    width: 100vw;
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    margin-top: var(--header-height);
+
+    padding: 0 200px;
+    background-color: transparent;
+    background-image: radial-gradient(#000000 .2px, #e5e5f7 .4px);
+    background-size: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        padding: 0 80px;
+    }
+}

@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import {Container, Footer, Header, Table} from "./components";
+import {CurrencyDataType} from "./utils/types";
+import {fetchCurrencyData} from "./api/fetchData";
+import './App.module.css'
 
-function App() {
+
+export const App = () => {
+  const [currency, setCurrency] = useState<CurrencyDataType[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetchCurrencyData();
+        setCurrency(response);
+      } catch (error) {
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Container>
+        <Table
+          currency={currency}
+          isLoading={isLoading}
+          isError={isError}
+        />
+      </Container>
+      <Footer />
     </div>
   );
-}
-
-export default App;
+};
