@@ -3,21 +3,12 @@ import s from './Table.module.css';
 import {convertToNumber} from "../../utils/helpers";
 import {Spinner} from '../Spinner';
 import {Error} from '../Error';
-import {CurrencyDataType} from "../../utils/types";
+import {useAppSelector} from "../../services";
 
-interface Props {
-  currency: CurrencyDataType[]
-  isLoading: boolean
-  isError: boolean
-}
-
-export const Table: FC<Props> = (
-  {
-    currency,
-    isLoading,
-    isError
-  }) => {
+export const Table: FC = () => {
   const date = new Date();
+  const currency = useAppSelector(state => state.currency.currencies)
+  const { isError, isLoading } = useAppSelector(state => state.app)
 
   return (
     <>

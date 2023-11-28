@@ -1,40 +1,37 @@
-import React, {useEffect, useState} from 'react';
-import {Container, Footer, Header, Table} from "./components";
-import {CurrencyDataType} from "./utils/types";
+import React, {useEffect} from 'react';
+import {Container, CurrencyCounter, Footer, Header, Table} from "./components";
 import {fetchCurrencyData} from "./api/fetchData";
 import './App.module.css'
-
+import {setCurrencyRates, useAppDispatch} from "./services";
+import {setIsError, setIsLoading} from "./services/features/app";
 
 export const App = () => {
-  const [currency, setCurrency] = useState<CurrencyDataType[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true);
+        dispatch(setIsLoading(true));
         const response = await fetchCurrencyData();
-        setCurrency(response);
+        dispatch(setCurrencyRates(response));
       } catch (error) {
-        setIsError(true);
+        dispatch(setIsError(true));
       } finally {
-        setIsLoading(false);
+        dispatch(setIsLoading(false));
       }
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
       <Header />
       <Container>
-        <Table
-          currency={currency}
-          isLoading={isLoading}
-          isError={isError}
-        />
+        <div>
+          <Table />
+          <CurrencyCounter />
+        </div>
       </Container>
       <Footer />
     </div>
