@@ -1,4 +1,4 @@
-export const convertToNumber = (value: string) => {
+export const getRoundedNumber = (value: string) => {
   const floatValue = parseFloat(value);
   const roundedValue = Math.round(floatValue * 10) / 10;
   return roundedValue % 1 === 0
