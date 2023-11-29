@@ -1,6 +1,6 @@
 import {ChangeEvent, FC, useEffect, useState} from 'react';
 import s from './CurrencyCounter.module.css';
-import swap from '../../assets/icons/swap.png';
+import swap from '../../assets/icons/Arrow.svg';
 import {useAppSelector} from '../../services';
 
 export const CurrencyCounter: FC = () => {
@@ -30,17 +30,17 @@ export const CurrencyCounter: FC = () => {
   };
 
   const handleSelectChange = (
-    e: ChangeEvent<HTMLSelectElement>,
+    event: ChangeEvent<HTMLSelectElement>,
     isChange: boolean
   ) => {
     if (isChange) {
-      setSelectedCurrencyChange(e.target.value);
-      if (e.target.value === selectedCurrencyGet) {
+      setSelectedCurrencyChange(event.target.value);
+      if (event.target.value === selectedCurrencyGet) {
         setSelectedCurrencyGet('');
       }
     } else {
-      setSelectedCurrencyGet(e.target.value);
-      if (e.target.value === selectedCurrencyChange) {
+      setSelectedCurrencyGet(event.target.value);
+      if (event.target.value === selectedCurrencyChange) {
         setSelectedCurrencyChange('');
       }
     }
@@ -66,31 +66,65 @@ export const CurrencyCounter: FC = () => {
     <div className={s.wrapper}>
       <div className={s.inputWrapper}>
         <label htmlFor="change">Change</label>
-        <input type="text" id="change" value={inputChange} onChange={handleInputChange}/>
+        <div className={s.currencyOption}>
+          <input
+            type="number"
+            className={s.input}
+            id="change"
+            value={inputChange}
+            onChange={handleInputChange}
+          />
+          <select
+            className={s.select}
+            value={selectedCurrencyChange}
+            onChange={(event) => handleSelectChange(event, true)}
+          >
+            {currencies.map(({ccy}) => (
+              <option key={ccy} disabled={ccy === selectedCurrencyGet} value={ccy}>
+                {ccy}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <select value={selectedCurrencyChange} onChange={(e) => handleSelectChange(e, true)}>
-        {currencies.map(({ccy}) => (
-          <option key={ccy} disabled={ccy === selectedCurrencyGet} value={ccy}>
-            {ccy}
-          </option>
-        ))}
-      </select>
 
-      <img className={s.swapIcon} src={swap} alt="Switch Icon" onClick={handleSwap}/>
+      <img
+        className={s.swapIcon}
+
+        src={swap}
+        alt="Switch Icon"
+        onClick={handleSwap}
+      />
 
       <div className={s.inputWrapper}>
         <label htmlFor="get">Get</label>
-        <input type="text" id="get" value={inputGet} readOnly/>
-      </div>
-      <select value={selectedCurrencyGet} onChange={(e) => handleSelectChange(e, false)}>
-        <option value=''>-</option>
-        {currencies.map(({ccy}) => (
-          <option key={ccy} disabled={ccy === selectedCurrencyChange} value={ccy}>
-            {ccy}
-          </option>
-        ))}
-      </select>
 
+        <div className={s.currencyOption}>
+          <input
+            className={s.input}
+            id="get"
+            value={inputGet}
+            readOnly
+          />
+          <select
+            className={s.select}
+            value={selectedCurrencyGet}
+            onChange={(event) => handleSelectChange(event, false)}
+          >
+            <option value=''>...</option>
+
+            {currencies.map(({ccy}) => (
+              <option
+                key={ccy}
+                disabled={ccy === selectedCurrencyChange}
+                value={ccy}
+              >
+                {ccy}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {Container, CurrencyCounter, Error, Footer, Header, Spinner, Table} from "./components";
 import {fetchCurrencyData} from "./api/fetchData";
-import './App.module.css'
 import {setCurrencyRates, useAppDispatch, useAppSelector} from "./services";
 import {setIsError, setIsLoading} from "./services/features/app";
 
@@ -26,7 +25,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div>
       <Header/>
       <Container>
         {
@@ -36,7 +35,7 @@ export const App = () => {
               {
                 isError
                   ? <Error/>
-                  : <div>
+                  : <div  style={{display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: "center"}}>
                     <Table/>
                     <CurrencyCounter/>
                   </div>

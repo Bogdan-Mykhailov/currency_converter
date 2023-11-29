@@ -1,14 +1,28 @@
 .footer {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    flex-direction: column;
+    padding-right: 30px;
 
     position: fixed;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: seashell;
+    background-color: #F8F8F8;
     height: var(--footer-height);
 
-    border-top: 1px solid black;
+    border-top: 1px solid #EBEDED;
+}
+
+.footerWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardsWrapper {
+    padding-top: 8px;
+    display: flex;
+    gap: 4px;
 }

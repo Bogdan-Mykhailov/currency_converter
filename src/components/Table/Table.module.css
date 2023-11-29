@@ -1,26 +1,19 @@
-.tableWrapper {
-    padding: 25px;
-    background-color: var(--gray-dark);
-}
-
+.tableWrapper {}
 .table {
-    background-color: var(--gray-extradark);
-    margin: 0 auto;
-    font-size: 14px;
+    background-color: #EBEDED;
+    border-radius: 20px;
+    padding: 20px 10px 10px;
     text-align: center;
-    font-family: Roboto, Arial, sans-serif;
+    color: #1f1f20;
 }
 
 .head {
-    color: var(--white-half-transparent);
-}
-
-th {
-    padding: 20px;
+    color: #1E1E1E;
 }
 
 td {
-    background-color: var(--gray-light);
-    color: var(--text);
-    padding: 20px;
+    background-color: rgba(212, 216, 217, 0.32);
+    color: #1f1f20;
+    width: 120px;
+    height: 60px;
 }

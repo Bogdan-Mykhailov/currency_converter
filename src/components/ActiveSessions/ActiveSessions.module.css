@@ -1,0 +1,8 @@
+.sessionInfo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: max-content;
+    justify-content: flex-end;
+    flex-direction: row;
+}

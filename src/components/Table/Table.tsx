@@ -14,7 +14,7 @@ export const Table: FC = () => {
         <thead className={s.head}>
         <tr>
           <th>
-            Currency / {`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}
+            Currency {`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}
           </th>
           <th>Buy</th>
           <th>Sell</th>

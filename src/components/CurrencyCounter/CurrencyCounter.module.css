@@ -1,19 +1,52 @@
 .wrapper {
     display: flex;
-    align-items: flex-end;
-    border: 1px solid red;
-    padding: 20px;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .swapIcon {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    margin: 0 8px;
+    margin: 0 14px;
+    transform: rotate(90deg);
 }
 
 .inputWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.input {
+    outline: none;
+    width: 100px;
+    height: 34px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 9px;
+    background: #FFF;
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.currencyOption {
+    padding: 0 8px;
+    background: #FFF;
+    border-radius: 9px;
+    border: 1px solid  #29CC9B;
+}
+
+.select {
+    border-radius: 9px;
+    outline: none;
+    height: 34px;
+    padding: 0 8px;
+    border: none;
 }

@@ -1,7 +1,6 @@
 import React, {ChangeEvent, FC, useEffect, useRef, useState} from 'react';
 import {getRoundedNumber} from "../../utils/helpers";
 import check from '../../assets/icons/Check.svg'
-import edit from '../../assets/icons/Edit.svg'
 import cross from '../../assets/icons/Close.svg'
 import s from './EditableSpan.module.css'
 
@@ -14,7 +13,6 @@ export const EditableSpan: FC<EditableSpanProps> = ({value}) => {
   const [editedValue, setEditedValue] = useState(value);
   const inputRef = useRef<HTMLInputElement>(null);
   const [originalValue, setOriginalValue] = useState(value);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (isEditing && inputRef.current) {
@@ -41,7 +39,7 @@ export const EditableSpan: FC<EditableSpanProps> = ({value}) => {
   };
 
   return isEditing ? (
-    <>
+    <div className={s.inputWrapper}>
       <input
         className={s.input}
         ref={inputRef}
@@ -51,30 +49,20 @@ export const EditableSpan: FC<EditableSpanProps> = ({value}) => {
         step={+value / 10}
       />
       <button
+        className={s.button}
         onClick={saveUpdates}
         disabled={originalValue === editedValue}
       >
-        <img className={s.checkIcon} src={check} alt="check"/>
+        <img className={s.icon} src={check} alt="check"/>
       </button>
-      <button onClick={closeEditMode}>
-        <img className={s.crossIcon} src={cross} alt="cross"/>
+      <button className={s.button} onClick={closeEditMode}>
+        <img className={s.icon} src={cross} alt="cross"/>
       </button>
-    </>
+    </div>
 
   ) : (
-    <div
-      onDoubleClick={handleDoubleClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <span
-        className={s.span}
-      >
-        {getRoundedNumber(editedValue)}
-      </span>
-      {isHovered && (
-        <img className={s.editIcon} src={edit} alt="edit" />
-      )}
+    <div onDoubleClick={handleDoubleClick}>
+      <span className={s.span}>{getRoundedNumber(editedValue)}</span>
     </div>
   );
 };
