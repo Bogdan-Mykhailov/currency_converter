@@ -3,6 +3,7 @@ import {Container, CurrencyCounter, Error, Footer, Header, Spinner, Table} from 
 import {fetchCurrencyData} from "./api/fetchData";
 import {setCurrencyRates, useAppDispatch, useAppSelector} from "./services";
 import {setIsError, setIsLoading} from "./services/features/app";
+import s from './App.module.css';
 
 export const App = () => {
   const dispatch = useAppDispatch();
@@ -35,7 +36,7 @@ export const App = () => {
               {
                 isError
                   ? <Error/>
-                  : <div  style={{display: 'flex', flexDirection: "column", alignItems: 'center', justifyContent: "center"}}>
+                  : <div className={s.contentWrapper}>
                     <Table/>
                     <CurrencyCounter/>
                   </div>

@@ -9,40 +9,38 @@ export const Table: FC = () => {
   const currency = useAppSelector(state => state.currency.currencies)
 
   return (
-    <div className={s.tableWrapper}>
-      <table className={s.table}>
-        <thead className={s.head}>
-        <tr>
-          <th>
-            Currency {`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}
-          </th>
-          <th>Buy</th>
-          <th>Sell</th>
-        </tr>
-        </thead>
+    <table className={s.table}>
+      <thead className={s.head}>
+      <tr>
+        <th>
+          Currency {`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}
+        </th>
+        <th>Buy</th>
+        <th>Sell</th>
+      </tr>
+      </thead>
 
-        <tbody className={s.body}>
-        {
-          currency.map(({buy, ccy, sale, base_ccy}) => {
-            return (
-              <tr key={ccy}>
-                <td>{`${ccy}/${base_ccy}`}</td>
-                <td>
-                  <EditableSpan
-                    value={getRoundedNumber(buy)}
-                  />
-                </td>
-                <td>
-                  <EditableSpan
-                    value={getRoundedNumber(sale)}
-                  />
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-    </div>
+      <tbody className={s.body}>
+      {
+        currency.map(({buy, ccy, sale, base_ccy}) => {
+          return (
+            <tr key={ccy}>
+              <td>{`${ccy}/${base_ccy}`}</td>
+              <td>
+                <EditableSpan
+                  value={getRoundedNumber(buy)}
+                />
+              </td>
+              <td>
+                <EditableSpan
+                  value={getRoundedNumber(sale)}
+                />
+              </td>
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
   );
 };
 

@@ -7,11 +7,11 @@ export const Footer: FC = () => {
   return (
     <footer className={s.footer}>
       <div className={s.footerWrapper}>
-        <h4>{date.getFullYear()} © Currency converter</h4>
+        <h4 className={s.footerTitle}>{date.getFullYear()} © Currency converter</h4>
         <div className={s.cardsWrapper}>
           {paymentCards.map(({id, name}) => (
             <a key={id} href="/">
-              <img src={name} alt="name"/>
+              <img className={s.card} src={name} alt="name"/>
             </a>
           ))}
         </div>

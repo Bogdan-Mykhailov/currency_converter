@@ -2,6 +2,10 @@
     display: flex;
     align-items: center;
     padding: 20px 0;
+    @media (max-width: 576px) {
+        flex-direction: column;
+        padding: 10px 0;
+    }
 }
 
 .swapIcon {
@@ -10,6 +14,11 @@
     cursor: pointer;
     margin: 0 14px;
     transform: rotate(90deg);
+
+    @media (max-width: 576px) {
+        margin: 8px 0 -5px;
+        transform: rotate(0deg);
+    }
 }
 
 .inputWrapper {
@@ -20,7 +29,7 @@
 
 .input {
     outline: none;
-    width: 100px;
+    width: 80px;
     height: 34px;
     padding: 0 8px;
     border: none;
@@ -28,6 +37,9 @@
     background: #FFF;
     -moz-appearance: textfield;
     -webkit-appearance: none;
+    @media (max-width: 576px) {
+        width: 130px;
+    }
 }
 
 .input::-webkit-inner-spin-button,

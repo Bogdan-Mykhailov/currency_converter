@@ -13,6 +13,12 @@
     height: var(--footer-height);
 
     border-top: 1px solid #EBEDED;
+
+    @media (max-width: 576px) {
+        height: 70px;
+        align-items: center;
+        padding: 10px 0 0;
+    }
 }
 
 .footerWrapper {
@@ -21,8 +27,22 @@
     flex-direction: column;
 }
 
+.footerTitle {
+    font-size: 14px;
+}
+
 .cardsWrapper {
     padding-top: 8px;
     display: flex;
     gap: 4px;
+    @media (max-width: 576px) {
+        padding-top: 4px;
+    }
+}
+
+.card {
+    @media (max-width: 576px) {
+        height: 28px;
+        width: 32px;
+    }
 }

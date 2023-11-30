@@ -23,7 +23,7 @@ export const ActiveSessions = () => {
   const title = `Online: ${sessionCount}`;
 
   return <div className={s.sessionInfo}>
-    <img src={users} alt="users"/>
+    <img className={s.userIcon} src={users} alt="users"/>
     <span>{title}</span>
   </div>;
 };

@@ -1,10 +1,13 @@
-.tableWrapper {}
 .table {
     background-color: #EBEDED;
     border-radius: 20px;
     padding: 20px 10px 10px;
     text-align: center;
     color: #1f1f20;
+    @media (max-width: 576px) {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
 }
 
 .head {
@@ -14,6 +17,11 @@
 td {
     background-color: rgba(212, 216, 217, 0.32);
     color: #1f1f20;
+
     width: 120px;
     height: 60px;
+    @media (max-width: 576px) {
+        width: 100px;
+        height: 40px;
+    }
 }

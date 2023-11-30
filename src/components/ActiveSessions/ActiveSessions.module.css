@@ -5,4 +5,15 @@
     width: max-content;
     justify-content: flex-end;
     flex-direction: row;
+
+    @media (max-width: 576px) {
+        width: 60px;
+        font-size: 14px;
+    }
+}
+
+.userIcon {
+    @media (max-width: 576px) {
+        display: none;
+    }
 }

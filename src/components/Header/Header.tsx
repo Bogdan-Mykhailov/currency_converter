@@ -10,7 +10,7 @@ export const Header: FC = () => {
         <a href="/">
           <img className={s.logo} src={logo} alt="Logo"/>
         </a>
-        <h2>Currency Converter</h2>
+        <h2 className={s.title}>Currency Converter</h2>
       </div>
       <ActiveSessions/>
     </header>

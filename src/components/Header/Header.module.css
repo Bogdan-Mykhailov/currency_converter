@@ -10,8 +10,11 @@
     right: 0;
     background-color: #F8F8F8;
     height: var(--header-height);
-
     border-bottom: 1px solid #EBEDED;
+
+    @media (max-width: 576px) {
+        height: 60px;
+    }
 }
 
 .logoWrapper {
@@ -19,10 +22,25 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 576px) {
+        gap: 10px;
+    }
+}
+
+.title {
+    @media (max-width: 576px) {
+        font-size: 18px;
+    }
 }
 
 .logo {
     width: 40px;
     height: 40px;
     cursor: pointer;
+
+    @media (max-width: 576px) {
+        width: 30px;
+        height: 30px;
+    }
 }
