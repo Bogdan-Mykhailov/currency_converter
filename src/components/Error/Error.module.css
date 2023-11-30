@@ -1,3 +1,21 @@
+.errorWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.alert {
+    width: 250px;
+    @media (max-width: 576px) {
+        width: 150px;
+    }
+}
+
 .error {
     color: var(--error);
+    text-align: center;
+     @media (max-width: 576px) {
+         font-size: 16px;
+     }
 }
