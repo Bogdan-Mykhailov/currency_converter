@@ -56,7 +56,7 @@
 }
 
 .select {
-
+    cursor: pointer;
     border-radius: 9px;
     outline: none;
     height: 34px;

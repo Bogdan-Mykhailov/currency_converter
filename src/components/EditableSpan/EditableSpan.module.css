@@ -54,6 +54,7 @@
     background-color: #F8F8F8;
     border: 1px solid #EBEDED;
     margin: 0 2px;
+    cursor: pointer;
 
     @media (max-width: 365px) {
         width: 15px;
