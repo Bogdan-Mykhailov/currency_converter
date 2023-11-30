@@ -21,13 +21,13 @@ describe('CurrencyCounter', () => {
     const getInput = screen.getByLabelText('Get') as HTMLInputElement;
 
     expect(changeInput.value).toBe('1');
-    expect(getInput.value).toBe('');
+    expect(getInput.value).toBe('187.6');
 
     const changeSelect = screen.getByLabelText('Change') as HTMLSelectElement;
     const getSelect = screen.getByLabelText('Get') as HTMLSelectElement;
 
     expect(changeSelect.value).toBe('1');
-    expect(getSelect.value).toBe('');
+    expect(getSelect.value).toBe('187.6');
   });
 
   test('swaps currencies on icon click', async () => {
@@ -44,7 +44,7 @@ describe('CurrencyCounter', () => {
       const inputChange = screen.getByLabelText('Change');
       const inputGet = screen.getByLabelText('Get');
 
-      expect(inputChange).toHaveValue(null);
+      expect(inputChange).toHaveValue(187.6);
       expect(inputGet).toHaveValue('1');
     });
   });

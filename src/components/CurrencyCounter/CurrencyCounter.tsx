@@ -6,9 +6,9 @@ import {useAppSelector} from '../../services';
 export const CurrencyCounter: FC = () => {
   const currencies = useAppSelector((state) => state.currency.currencies);
   const [inputChange, setInputChange] = useState('1');
-  const [inputGet, setInputGet] = useState('');
+  const [inputGet, setInputGet] = useState('187.6');
   const [selectedCurrencyChange, setSelectedCurrencyChange] = useState<string | undefined>("GBP");
-  const [selectedCurrencyGet, setSelectedCurrencyGet] = useState<string>();
+  const [selectedCurrencyGet, setSelectedCurrencyGet] = useState<string | undefined>('JPY');
 
   useEffect(() => {
     calculateConversion();
@@ -90,7 +90,6 @@ export const CurrencyCounter: FC = () => {
 
       <img
         className={s.swapIcon}
-
         src={swap}
         alt="Switch Icon"
         onClick={handleSwap}
@@ -111,17 +110,18 @@ export const CurrencyCounter: FC = () => {
             value={selectedCurrencyGet}
             onChange={(event) => handleSelectChange(event, false)}
           >
-            <option value=''>...</option>
+            {currencies.map(({ccy}) => {
 
-            {currencies.map(({ccy}) => (
-              <option
-                key={ccy}
-                disabled={ccy === selectedCurrencyChange}
-                value={ccy}
-              >
-                {ccy}
-              </option>
-            ))}
+              return (
+                <option
+                  key={ccy}
+                  disabled={ccy === selectedCurrencyChange}
+                  value={ccy}
+                >
+                  {ccy}
+                </option>
+              )
+            })}
           </select>
         </div>
       </div>
