@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+<h1>Currency Converter</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<a href='https://currency-converter-git-dev-bogdan-mykhailov.vercel.app/' rel='nofollow'>
+<img src="https://img.shields.io/badge/Currency_Converter_💵-4e93e6?style=for-the-badge&logo=Portfolio&logoColor=black" alt="portfolio">
+</a>
 
-## Available Scripts
+<p></p>
 
-In the project directory, you can run:
+<p>The Currency Converter project is a web application built using React and Redux Toolkit that allows users to convert currencies in real-time. It utilizes Socket.IO for live updates and provides a user-friendly interface for currency conversion.</p>
+<img width="2042" alt="Screenshot 2023-11-30 at 15 35 49" src="https://github.com/Bogdan-Mykhailov/currency_converter/assets/91826635/1bc7bca4-7e74-4e7c-a802-3df3d40c8437">
 
-### `npm start`
+<h2>Features</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Real-time currency conversion with live updates.
+- Interactive and editable currency table.
+- User-friendly interface for input and selection of currencies.
+- Swapping functionality for easy exchange rate comparison.
+- Responsive design for a seamless user experience on different devices.
+<img width="384" alt="Screenshot 2023-11-30 at 15 36 23" src="https://github.com/Bogdan-Mykhailov/currency_converter/assets/91826635/59e16db1-f096-41d2-a976-bb6c0c65eb43">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2>Tech Stack</h2>
 
-### `npm test`
+- React: A JavaScript library for building user interfaces.
+- Redux Toolkit: A state management library for React applications.
+- Socket.IO Client: A library for real-time web applications.
+- TypeScript: A superset of JavaScript that adds static typing.
+- Testing Library: A set of utilities for testing React components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>Getting Started</h2>
 
-### `npm run build`
+1. Clone the repository: git clone https://github.com/your-username/currency_converter.git
+2. Install dependencies: npm install
+3. Start the development server: npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2>Contributing</h2>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>Feel free to contribute to the project by submitting issues, feature requests, or pull requests. Your contributions are highly appreciated!</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2>License</h2>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License.
