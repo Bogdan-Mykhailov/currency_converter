@@ -49,17 +49,19 @@ export const EditableSpan: FC<EditableSpanProps> = ({value}) => {
         step={+value / 10}
         role="textbox"
       />
-      <button
-        className={s.button}
-        onClick={saveUpdates}
-        aria-label="check"
-        disabled={originalValue === editedValue}
-      >
-        <img className={s.icon} src={check} alt="check"/>
-      </button>
-      <button className={s.button} aria-label="cross" onClick={closeEditMode}>
-        <img className={s.icon} src={cross} alt="cross"/>
-      </button>
+      <div className={s.buttonWrapper}>
+        <button
+          className={s.button}
+          onClick={saveUpdates}
+          aria-label="check"
+          disabled={originalValue === editedValue}
+        >
+          <img className={s.icon} src={check} alt="check"/>
+        </button>
+        <button className={s.button} aria-label="cross" onClick={closeEditMode}>
+          <img className={s.icon} src={cross} alt="cross"/>
+        </button>
+      </div>
     </div>
 
   ) : (

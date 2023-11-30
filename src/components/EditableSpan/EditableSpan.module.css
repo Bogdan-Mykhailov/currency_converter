@@ -4,13 +4,17 @@
 }
 
 .input {
-    max-width: 70px;
+    width: 100%;
     background: transparent;
     border: 1px solid #29CC9B;
     outline: none;
     text-align: center;
     color: #1f1f20;
     font-size: 16px;
+
+    @media (max-width: 365px) {
+        font-size: 12px;
+    }
 }
 .span {
     cursor: pointer;
@@ -32,6 +36,14 @@
 .span:hover::before {
     display: inline-block;
 }
+
+.buttonWrapper {
+    display: flex;
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
+}
+
 .button {
     width: 20px;
     height: 20px;
@@ -42,8 +54,18 @@
     background-color: #F8F8F8;
     border: 1px solid #EBEDED;
     margin: 0 2px;
+
+    @media (max-width: 365px) {
+        width: 15px;
+        height: 15px;
+    }
 }
 .icon {
     width: 18px;
     height: 18px;
+
+    @media (max-width: 365px) {
+        width: 13px;
+        height: 13px;
+    }
 }
