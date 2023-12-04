@@ -28,7 +28,7 @@
 
 <h2>Getting Started</h2>
 
-1. Clone the repository: git clone https://github.com/your-username/currency_converter.git
+1. Clone the repository: git clone https://github.com/Bogdan-Mykhailov/currency_converter.git
 2. Install dependencies: npm install
 3. Start the development server: npm start
 
